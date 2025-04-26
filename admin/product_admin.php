@@ -1,5 +1,5 @@
 <?php
-include 'database.php';
+include '../database.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $product_name = $_POST['product_name'];
@@ -27,15 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 return $image_name_new;
             }
         }
-        return ''; // Return empty string if upload fails or no file selected
+        return ''; 
     }
 
-    // Upload images (optional)
     $image1 = uploadImage('image1');
     $image2 = uploadImage('image2');
     $image3 = uploadImage('image3');
 
-    // Use prepared statement to prevent SQL injection
     $stmt = $conn->prepare("INSERT INTO products 
         (product_name, category, brand_name, description, unit_of_measure, weight, material_type, image, image2, image3) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -75,7 +73,7 @@ include 'sidebar_admin.php';
   
   <meta charset="UTF-8">
   <title>Product Management</title>
-  <link rel="stylesheet" href="css/product_admin.css?=1.0">
+  <link rel="stylesheet" href="../css/product_admin.css?=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -166,7 +164,7 @@ include 'sidebar_admin.php';
                 <td><?= $row['weight'] ?></td>
                 <td><?= htmlspecialchars($row['material_type']) ?></td>
                 <td>
-                  <img src="image/<?= htmlspecialchars($row['image']) ?>" alt="Product Image" class="product-image">
+                  <img src="../image/<?= htmlspecialchars($row['image']) ?>" alt="Product Image" class="product-image">
                 </td>
                 
                 <td>
@@ -184,6 +182,7 @@ include 'sidebar_admin.php';
 
 
        <!-- Edit Modal -->
+<!-- Edit Modal -->
 <div class="modal fade" id="editProductModal<?= $row['product_id'] ?>" tabindex="-1" aria-labelledby="editProductModalLabel<?= $row['product_id'] ?>" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <form action="update_product.php" method="POST" enctype="multipart/form-data">
@@ -193,80 +192,78 @@ include 'sidebar_admin.php';
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
-        <div class="modal-body">
+        <div class="modal-body row g-3"> <!-- Change here to ensure same layout -->
           <input type="hidden" name="product_id" value="<?= $row['product_id'] ?>">
 
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label">Product Name</label>
-              <input type="text" name="product_name" class="form-control" value="<?= htmlspecialchars($row['product_name']) ?>" required>
-            </div>
-
-            <div class="col-md-6">
-              <label class="form-label">Category</label>
-              <input type="text" name="category" class="form-control" value="<?= htmlspecialchars($row['category']) ?>">
-            </div>
-
-            <div class="col-md-6">
-              <label class="form-label">Brand Name</label>
-              <input type="text" name="brand_name" class="form-control" value="<?= htmlspecialchars($row['brand_name']) ?>">
-            </div>
-
-            <div class="col-md-6">
-              <label class="form-label">Unit of Measure</label>
-              <input type="text" name="unit" class="form-control" value="<?= htmlspecialchars($row['unit_of_measure']) ?>">
-            </div>
-
-            <div class="col-md-6">
-              <label class="form-label">Weight</label>
-              <input type="text" name="weight" class="form-control" value="<?= htmlspecialchars($row['weight']) ?>">
-            </div>
-
-            <div class="col-md-6">
-              <label class="form-label">Material Type</label>
-              <input type="text" name="material" class="form-control" value="<?= htmlspecialchars($row['material_type']) ?>">
-            </div>
-
-            <div class="col-12">
-              <label class="form-label">Description</label>
-              <textarea name="description" rows="3" class="form-control"><?= htmlspecialchars($row['description']) ?></textarea>
-            </div>
-
-              <!-- Main Photo -->
-            <div class="col-md-4">
-              <label class="form-label">Main Photo</label>
-              <?php if (!empty($row['image'])): ?>
-                <div class="mb-2">
-                  <img src="image/<?= htmlspecialchars($row['image']) ?>" alt="Main Photo" class="img-thumbnail" style="max-height: 100px;">
-                </div>
-              <?php endif; ?>
-              <input type="file" name="image" class="form-control">
-            </div>
-
-            <!-- Alternate Angle -->
-            <div class="col-md-4">
-              <label class="form-label">Alternate Angle</label>
-              <?php if (!empty($row['image2'])): ?>
-                <div class="mb-2">
-                  <img src="image/<?= htmlspecialchars($row['image2']) ?>" alt="Alternate Angle" class="img-thumbnail" style="max-height: 100px;">
-                </div>
-              <?php endif; ?>
-              <input type="file" name="image2" class="form-control">
-            </div>
-
-            <!-- Close-up or Another View -->
-            <div class="col-md-4">
-              <label class="form-label">Close-up or Another View</label>
-              <?php if (!empty($row['image3'])): ?>
-                <div class="mb-2">
-                  <img src="image/<?= htmlspecialchars($row['image3']) ?>" alt="Close-up" class="img-thumbnail" style="max-height: 100px;">
-                </div>
-              <?php endif; ?>
-              <input type="file" name="image3" class="form-control">
-            </div>
-
+          <div class="col-md-6">
+            <label class="form-label">Product Name</label>
+            <input type="text" name="product_name" class="form-control" value="<?= htmlspecialchars($row['product_name']) ?>" required>
           </div>
-        </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Category</label>
+            <input type="text" name="category" class="form-control" value="<?= htmlspecialchars($row['category']) ?>">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Brand Name</label>
+            <input type="text" name="brand_name" class="form-control" value="<?= htmlspecialchars($row['brand_name']) ?>">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Unit of Measure</label>
+            <input type="text" name="unit" class="form-control" value="<?= htmlspecialchars($row['unit_of_measure']) ?>">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Weight</label>
+            <input type="text" name="weight" class="form-control" value="<?= htmlspecialchars($row['weight']) ?>">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Material Type</label>
+            <input type="text" name="material" class="form-control" value="<?= htmlspecialchars($row['material_type']) ?>">
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Description</label>
+            <textarea name="description" rows="3" class="form-control"><?= htmlspecialchars($row['description']) ?></textarea>
+          </div>
+
+          <!-- Main Photo -->
+          <div class="col-md-4">
+            <label class="form-label">Main Photo</label>
+            <?php if (!empty($row['image'])): ?>
+              <div class="mb-2">
+                <img src="../image/<?= htmlspecialchars($row['image']) ?>" alt="Main Photo" class="img-thumbnail" style="max-height: 100px;">
+              </div>
+            <?php endif; ?>
+            <input type="file" name="image" class="form-control">
+          </div>
+
+          <!-- Alternate Angle -->
+          <div class="col-md-4">
+            <label class="form-label">Alternate Angle</label>
+            <?php if (!empty($row['image2'])): ?>
+              <div class="mb-2">
+                <img src="../image/<?= htmlspecialchars($row['image2']) ?>" alt="Alternate Angle" class="img-thumbnail" style="max-height: 100px;">
+              </div>
+            <?php endif; ?>
+            <input type="file" name="image2" class="form-control">
+          </div>
+
+          <!-- Close-up or Another View -->
+          <div class="col-md-4">
+            <label class="form-label">Close-up or Another View</label>
+            <?php if (!empty($row['image3'])): ?>
+              <div class="mb-2">
+                <img src="../image/<?= htmlspecialchars($row['image3']) ?>" alt="Close-up" class="img-thumbnail" style="max-height: 100px;">
+              </div>
+            <?php endif; ?>
+            <input type="file" name="image3" class="form-control">
+          </div>
+
+        </div> <!-- End of modal-body -->
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -276,6 +273,7 @@ include 'sidebar_admin.php';
     </form>
   </div>
 </div>
+
 
             <?php endwhile; ?>
           </tbody>

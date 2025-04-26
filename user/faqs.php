@@ -11,13 +11,11 @@ include 'header.php';
 <body>
 
   <div class="faq-wrapper">
-<!-- Left Column for Logo and Contact Info -->
+<!-- Left Column for Logo and Contact Info  -->
 <div class="faq-left">
   <h1>Frequently Asked Questions</h1>
   <p>Find answers to common inquiries about our products and services.</p>
   <p>For inquiries, you can email us at <a href="mailto:support@noblehomeconstruction.com">support@noblehomeconstruction.com</a> or call us at <strong>(123) 456-7890</strong>.</p>
-  <a href="<?= basename($_SERVER['PHP_SELF']) === 'index.php' ? '#contact' : 'index.php#contact' ?>">
-    <button class="contact-us-btn">Contact Us</button>
   </a>
 </div>
 

@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <a href="product_details.php?id=<?= $related['product_id'] ?>" class="related-card">
               <img src="../image/<?= htmlspecialchars($related['image']) ?>" alt="<?= htmlspecialchars($related['product_name']) ?>">
               <h4><?= htmlspecialchars($related['product_name']) ?></h4>
-              <p><?= htmlspecialchars($related['brand_name']) ?></p>
+              <p><?= htmlspecialchars($related['material_type']) ?></p>
             </a>
           <?php endwhile; ?>
         </div>

@@ -1,8 +1,9 @@
 <?php
 include('../database.php');
 
-$query = "SELECT id, name, LEFT(message, 50) AS message_preview, email FROM inquiry ORDER BY created_at DESC";
+$query = "SELECT id, name, LEFT(message, 50) AS message_preview, email, is_read FROM inquiry ORDER BY created_at DESC";
 $result = mysqli_query($conn, $query);
+
 
 include 'sidebar_admin.php';
 ?>
@@ -18,26 +19,28 @@ include 'sidebar_admin.php';
 </head>
 <style>
     .chat-item.unread {
-    background-color: #fff3cd; /* Light yellow */
+    background-color: #f9f9f9; /* Light yellow */
     font-weight: bold;
-}
-.chat-item.read {
-    background-color: #e2e3e5; /* Light gray */
-    font-weight: normal;
-}
+        }
+        .chat-item.read {
+            background-color: #e2e3e5; /* Light gray */
+            font-weight: normal;
+        }
 </style>
 <body>
-    <div class="chat-container">
+   
+<div class="chat-container">
         <!-- Inquiry List -->
         <div class="chat-list">
-            <?php while ($chat = mysqli_fetch_assoc($result)): ?>
-                <div class="chat-item" onclick="viewChat('<?php echo htmlspecialchars($chat['id']); ?>')">
-                    <div class="chat-preview">
-                        <strong><?php echo htmlspecialchars($chat['name']); ?></strong>
-                        <span><?php echo htmlspecialchars($chat['message_preview']); ?>...</span>
-                    </div>
-                </div>
-            <?php endwhile; ?>
+        <?php while ($chat = mysqli_fetch_assoc($result)): ?>
+    <div class="chat-item <?php echo $chat['is_read'] ? 'read' : 'unread'; ?>" onclick="viewChat('<?php echo htmlspecialchars($chat['id']); ?>')">
+        <div class="chat-preview">
+            <strong><?php echo htmlspecialchars($chat['name']); ?></strong>
+            <span><?php echo htmlspecialchars($chat['message_preview']); ?>...</span>
+        </div>
+    </div>
+<?php endwhile; ?>
+
         </div>
 
         <!-- Chat Details -->
