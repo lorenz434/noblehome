@@ -1,0 +1,145 @@
+body {
+  background-color: #f4f6f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  padding-top: 40px;
+}
+
+h2, h4 {
+  font-weight: bold;
+  color: #333;
+}
+
+.container-fluid {
+  width: 120%;
+  transform: translateX(-33%);
+  
+}
+
+
+.table-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  width: 1720px;
+}
+
+.filter-panel {
+  min-height: 100%;
+}
+
+
+.product-card {
+  padding: 20px;
+}
+
+.table th {
+  background-color: #2c3e50 !important;
+  color: #ffffff;
+}
+
+.table-striped > tbody > tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #eef2f7;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn-add {
+  background-color: #FB9526;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 16px;
+  transition: background 0.3s ease;
+  margin-right: -650px;
+}
+
+.btn-add:hover {
+  background-color: #c55103;
+}
+
+.modal-content {
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.modal-header {
+  background-color: #FB9526;
+  color: white;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.modal-footer .btn {
+  border-radius: 6px;
+}
+
+input.form-control, textarea.form-control, select.form-select {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Filter panel layout */
+.filter-panel {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filter-panel {
+    margin-bottom: 20px;
+  }
+}
+
+/* Edit Icon Style */
+.edit-icon {
+  display: inline-block;
+  padding: 0px;
+  transition: all 0.3s ease;
+  font-size: 1.5rem; /* Increase icon size */
+}
+
+.edit-icon:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+/* Delete Icon Style */
+.delete-icon {
+  display: inline-block;
+  padding: 0px;
+    transition: all 0.3s ease;
+  font-size: 1.5rem; /* Increase icon size */
+}
+
+.delete-icon:hover {
+  background-color: #dc3545;
+  color: white;
+  border-color: #a71d2a;
+}
+
+/* Optional: Adding some spacing between icons */
+td a {
+  margin-right: 10px;
+}

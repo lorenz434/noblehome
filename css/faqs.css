@@ -1,0 +1,128 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  .faq-wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1600px;
+    margin: 3rem auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    overflow: hidden;
+    padding: 2rem;
+  }
+
+  .faq-left {
+  flex: 1 1 45%;
+  background-color: #fb9526;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.faq-left a {
+  text-decoration: none;
+}
+
+.contact-us-btn {
+  background-color: #ffffff;
+  color: #fb9526;
+  border: 2px solid #fb9526;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s;
+}
+
+.contact-us-btn:hover {
+  background-color: #fb9526;
+  color: #fff;
+}
+
+  .faq-right {
+    flex: 1 1 50%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-intro {
+    padding: 2rem;
+  }
+
+  .faq-intro h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .faq-intro p {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  .faq-container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+  }
+
+  .faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    color: #333;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    transition: color 0.3s ease;
+  }
+
+  .faq-question:hover {
+    color: #fb9526;
+  }
+
+  .faq-answer {
+    display: none;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .faq-wrapper {
+      flex-direction: column;
+    }
+
+    .faq-left, .faq-right {
+      flex: 1 1 100%;
+    }
+
+    .faq-left img {
+      max-width: 150px;
+    }
+  }

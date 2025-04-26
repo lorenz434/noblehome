@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+.chat-container {
+    display: flex;
+    padding: 40px;
+    gap: 24px;
+    max-width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.chat-list {
+    width: 35%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.chat-item {
+    padding: 12px 16px;
+    background-color: #fafafa;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.chat-item:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.01);
+}
+
+.chat-preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-preview strong {
+    font-weight: 600;
+    color: #2d2d2d;
+    margin-bottom: 5px;
+}
+
+.chat-preview span {
+    color: #666;
+    font-size: 14px;
+}
+
+.chat-details {
+    width: 65%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chat-details h3 {
+    margin-top: 0;
+    color: #222;
+    font-size: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 12px;
+}
+
+.chat-details div {
+    margin-top: 18px;
+}
+
+.chat-details label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+.chat-details p {
+    margin: 0;
+    background-color: #f9f9f9;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Reply Section Styling Based on Existing Design */
+#reply-section {
+    background-color: #fafafa;
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-top: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+#reply-section h4 {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Textarea Styling */
+#replyForm textarea {
+    width: 100%;
+    padding: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    margin-bottom: 16px;
+    background-color: #fff;
+}
+
+/* Submit Button Styling */
+#replyForm .submit-button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#replyForm .submit-button:hover {
+    background-color: #038c5a;
+}
+
+/* Spinner Styles */
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Status Message Styles */
+#reply-status {
+    font-size: 14px;
+    color: #28a745; /* Green for success */
+}
+
+#reply-status.error {
+    color: #dc3545; /* Red for error */
+}
+

@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+  }
+  
+  /* Ensure the navbar and nav-links inherit the same font */
+  .navbar {
+    background-color: #ffffff;
+    color: black;
+    padding: 1rem 0;
+    font-family: Arial, sans-serif; /* Explicitly set the font here if necessary */
+  }
+    .container {
+      width: 100%;
+      max-width: 95%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: auto;
+    }
+    
+    /* Arrange items normally: left to right */
+    .container {
+      flex-direction: row;
+      
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo img {
+      height: 60px;
+      width: 100%;
+      
+    }
+    
+    .logo span {
+      font-size: 1.8rem;
+      font-weight: bold;
+      
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 120px; 
+    }
+    
+  .nav-links a {
+    color: black;
+    font-size: 1.2rem; /* make the links a bit bigger */
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: Arial, sans-serif; /* Explicitly set font for nav links */
+  }
+  
+  .nav-links a:hover {
+    color: #ff9100;
+  }
+    html {
+      scroll-behavior: smooth;
+    }

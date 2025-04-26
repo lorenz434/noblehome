@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* Namespace for all custom sidebar styles */
+.custom-sidebar-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.custom-sidebar-container body {
+  min-height: 100%;
+  background: #e3f2fd;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.custom-sidebar-container nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.custom-sidebar-container nav .logo {
+  display: flex;
+  align-items: center;
+  margin: 0 24px;
+}
+
+.custom-sidebar-container .logo .menu-icon {
+  color: #333;
+  font-size: 24px;
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+.custom-sidebar-container .logo .logo-name {
+  color: #333;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.custom-sidebar-container nav .sidebar {
+  position: fixed; /* Ensure the sidebar stays fixed */
+  top: 0;
+  left: -260px; /* Start off-screen */
+  height: 100%;
+  width: 260px;
+  padding: 20px 0;
+  background-color: #fff;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+  transition: left 0.4s ease; /* Transition only on the left property */
+  z-index: 1000; /* Ensure the sidebar is on top */
+}
+
+.custom-sidebar-container nav.open .sidebar {
+  left: 0; /* Move sidebar into view */
+}
+
+.custom-sidebar-container .sidebar .sidebar-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 16px;
+}
+
+.custom-sidebar-container .sidebar-content .list {
+  list-style: none;
+}
+
+.custom-sidebar-container .list .nav-link {
+  display: flex;
+  margin: 8px 0;
+  padding: 14px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.custom-sidebar-container .lists .nav-link:hover {
+  background-color: #4070f4;
+}
+
+.custom-sidebar-container .nav-link .icon {
+  margin-right: 14px;
+  font-size: 20px;
+  color: #707070;
+}
+
+.custom-sidebar-container .nav-link .link {
+  font-size: 16px;
+  color: #707070;
+  font-weight: 400;
+}
+
+.custom-sidebar-container .lists .nav-link:hover .icon,
+.custom-sidebar-container .lists .nav-link:hover .link {
+  color: #fff;
+}
+
+.custom-sidebar-container .overlay {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Hide overlay off-screen */
+  height: 1000vh;
+  width: 200%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999; /* Ensure overlay is below sidebar */
+}
+
+.custom-sidebar-container nav.open ~ .overlay {
+  opacity: 1;
+  left: 260px; /* Position overlay over sidebar */
+  pointer-events: auto;
+}

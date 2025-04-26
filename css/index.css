@@ -1,0 +1,592 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+/* Hero Section Styles */
+/* Hero Section Styles */
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+
+/* SA GITNA */
+
+.construction-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  padding: 80px;
+  background-color: #ffffff;
+}
+
+.construction-images {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
+
+.construction-images img {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  height: 500%;
+  width: 100%;
+  object-fit: cover; /* Ensures the image covers the whole box */
+  transform: scale(1.05);
+}
+
+.construction-images img.active {
+  opacity: 1;
+  position: relative;
+}
+
+.construction-text {
+  max-width: 550px;
+}
+
+
+.construction-text h2 {
+  text-transform: uppercase;
+  color: #555;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.construction-text h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 30px;
+  line-height: 1.2;
+}
+
+.construction-description {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.vertical-line {
+  width: 4px;
+  height: 100%;
+  background-color: #FB9526;
+  border-radius: 2px;
+}
+
+.construction-description p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.construction-btn {
+  background-color: #FB9526;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(255, 184, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.construction-btn:hover {
+  background-color: #ffa500;
+  box-shadow: 0 12px 36px rgba(255, 165, 0, 0.4);
+}
+
+
+.learn-more {
+  background-color: #FB9526;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.learn-more:hover {
+  background-color: #28a745;
+}
+
+
+
+/* More Than Just Steel Section Styles */
+/* General styles */
+.more-than-steel {
+background-color: #f7f7f7;  /* Light grey for a modern background */
+padding: 5rem 2rem;
+text-align: center;
+position: relative;
+}
+
+.more-than-steel h2 {
+font-size: 2.5rem;
+font-weight: bold;
+color: #FB9526;  /* Use a more prominent color for the section title */
+margin-bottom: 2rem;
+letter-spacing: 1px;
+text-transform: uppercase;
+}
+
+.more-than-steel p {
+font-size: 1.2rem;
+color: #555;
+max-width: 800px;
+margin: 0 auto 3rem;
+line-height: 1.6;
+font-family: 'Arial', sans-serif;
+font-weight: 500;
+}
+
+/* Construction Section Styles */
+/* General section styling */
+.more-than-steel {
+background-color: #fafafa;  /* Soft background for a modern feel */
+padding: 6rem 3rem;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.more-than-steel h2 {
+font-size: 3rem;
+font-weight: bold;
+color: #FB9526;  /* Use a strong accent color */
+margin-bottom: 2rem;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+.more-than-steel p {
+font-size: 1.2rem;
+color: #666;  /* Slightly darker text for better readability */
+max-width: 900px;
+margin: 0 auto 3rem;
+line-height: 1.7;
+font-family: 'Arial', sans-serif;
+}
+
+/* Construction section */
+.construction-section { 
+display: flex;
+align-items: center;
+justify-content: center; /* Centers the flex items as a group */
+flex-wrap: wrap;
+gap: 40px; /* Add space between the two columns */
+padding: 40px 0; /* Add some spacing instead of negative margin */
+width: 100%;
+}
+
+.construction-images {
+position: relative;
+height: 800px;  
+width: 840px;
+overflow: hidden;
+border-radius: 7px;
+box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.construction-images img {
+  width: 100%;
+  height: 762px;
+  object-fit: contain; /* Show entire image without cutting */
+  transition: opacity 1s ease, transform 1s ease;
+  border-radius: 15px;
+  opacity: 0;
+}
+
+.construction-images img.active {
+opacity: 1;
+transform: scale(1.1);  /* Zoom effect to highlight active images */
+}
+
+/* Text section */
+.construction-text {
+flex: 1 1 45%;
+max-width: 550px;
+padding: 1rem 2rem;
+}
+
+.construction-text h1 {
+font-size: 3.5rem;
+font-weight: 700;
+color: #333;
+margin-bottom: 2rem;
+line-height: 1.3;
+}
+
+.construction-description {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+margin-bottom: 2rem;
+}
+
+.vertical-line {
+width: 5px;
+height: 100%;
+background-color: #FB9526;
+border-radius: 2px;
+}
+
+.construction-description p {
+color: #555;
+font-size: 1.2rem;
+line-height: 1.6;
+max-width: 550px;
+margin: 0;
+}
+
+/* Button styling */
+.construction-btn {
+background-color: #FB9526;
+border: none;
+border-radius: 30px;
+padding: 15px 40px;
+font-size: 1.2rem;
+color: #fff;
+font-weight: bold;
+cursor: pointer;
+box-shadow: 0 10px 30px rgba(255, 184, 0, 0.3);
+transition: background-color 0.3s ease, box-shadow 0.3s ease;
+margin-top: 2rem;
+}
+
+.construction-btn:hover {
+background-color: #ff8a00;
+box-shadow: 0 12px 36px rgba(255, 138, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.construction-section {
+flex-direction: column;
+align-items: center;
+}
+
+.construction-images {
+width: 100%;
+height: auto;
+}
+
+.construction-text h1 {
+font-size: 2.5rem;
+}
+
+.construction-btn {
+padding: 12px 25px;
+font-size: 1rem;
+}
+}
+
+
+
+
+.features-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.feature-item {
+  text-align: center;
+  max-width: 150px;
+}
+
+.feature-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 16px;
+  color: #333;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+}
+
+
+/* Available Products Section */
+.product_avalable {
+text-align: center;
+margin: 50px auto;
+max-width: 1000px;
+padding: 0px;
+}
+
+.product_avalable h2 {
+font-size: 2.5rem;
+margin-bottom: 10px;
+color: #FB9526;
+
+}
+
+.product_avalable p {
+font-size: 1.1rem;
+color: #000000;
+margin-bottom: 40px;
+}
+
+
+/* Slideshow container styles */
+/* Available Products Section */
+.product_avalable {
+text-align: center;
+margin: 50px auto;
+max-width: 1000px;
+padding: 0px;
+}
+
+.product_avalable h2 {
+font-size: 2.5rem;
+margin-bottom: 10px;
+color: #FB9526;
+}
+
+.product_avalable p {
+font-size: 1.1rem;
+color: #000000;
+margin-bottom: 40px;
+}
+
+/* Slideshow container styles */
+.carousel-container {
+position: relative;
+overflow: hidden;
+width: 100%;
+max-width: 100%;
+margin: auto;
+background-color: none;
+}
+
+.carousel-track {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+
+/* Updated slide styling */
+.carousel-slide {
+position: relative;             /* Needed for absolute caption */
+flex: 0 0 calc(100% / 4);         /* Adjust the number for desired slides per view */
+box-sizing: border-box;
+padding: 10px;
+}
+
+.carousel-slide img {
+width: 100%;  
+height: 500px;  
+object-fit: cover;
+border-radius: 10px;
+}
+
+/* Caption Styles */
+.carousel-caption {
+position: absolute;
+bottom: 10px;
+width: 93.7%;
+font-size: 25PX;
+color: #000000;
+background: #FB9526;
+padding: 5px;
+text-align: center;
+border-radius: 0 0 10px 10px;
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+z-index: 1;
+background-color: rgba(0,0,0,0.5);
+color: white;
+border: none;
+font-size: 24px;
+padding: 8px 12px;
+cursor: pointer;
+border-radius: 50%;
+}
+
+.carousel-btn.prev {
+left: 10px;
+}
+
+.carousel-btn.next {
+right: 10px;
+}
+
+
+
+
+/* Contact Us Section */
+/* Main Container: Maximized Width with Two Columns */
+.contact-us-container {
+max-width: 100%;         /* Wider container */
+margin: 50px auto;
+display: flex;
+gap: 40px;
+padding: 20px;
+background-color:rgb(255, 255, 255);
+border-radius: 10px;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Column: Contact Form */
+.contact-left {
+flex: 1 1 60%;     /* Occupies 60% of the container */
+padding: 20px;
+}
+
+.contact-left h2 {
+font-size: 2.5rem;
+color: #FB9526;
+margin-bottom: 15px;
+letter-spacing: 1px;
+}
+
+.contact-left p {
+font-size: 1.15rem;
+color: #555;
+margin-bottom: 30px;
+line-height: 1.5;
+}
+
+/* Contact Form Styles */
+.contact-form {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.form-group {
+text-align: left;
+display: flex;
+flex-direction: column;
+}
+
+.form-group label {
+font-size: 1rem;
+color: #333;
+margin-bottom: 8px;
+font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+padding: 12px;
+font-size: 1rem;
+border: 1px solid #ccc;
+border-radius: 5px;
+transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+outline: none;
+border-color: #FB9526;
+}
+
+.form-group textarea {
+resize: vertical;
+min-height: 150px;
+}
+
+/* Submit Button */
+.submit-btn {
+background-color: #FB9526;
+color: #fff;
+padding: 12px 20px;
+font-size: 1.1rem;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+align-self: center;
+transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+background-color: #e87c1f;
+}
+
+/* Right Column: Additional Content */
+.contact-right {
+flex: 1 1 40%;     /* Occupies 40% of the container */
+padding: 20px;
+background-color: #fff;    /* Light background to differentiate if needed */
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.contact-right h3 {
+font-size: 1.8rem;
+color: #FB9526;
+margin-bottom: 15px;
+}
+
+.contact-right p {
+font-size: 1rem;
+color: #333;
+line-height: 1.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+.contact-us-container {
+flex-direction: column;
+max-width: 90%;
+}
+.contact-left,
+.contact-right {
+flex: 1 1 100%;
+}
+.contact-right {
+margin-top: 20px;
+}
+}
