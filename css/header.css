@@ -64,3 +64,31 @@ body {
     html {
       scroll-behavior: smooth;
     }
+
+    /* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .logo span {
+    font-size: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+}

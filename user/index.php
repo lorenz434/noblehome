@@ -64,35 +64,44 @@ $conn->close();
   <title>
    Noble Home Corp.
   </title>
-  <link href="../css/index.css?v=1.0" rel="stylesheet"/>
+  <link href="../css/index.css?v=2.0" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <script src="index.js"></script>
 
  </head>
- <style>
 
- </style>
   <header>
     <?php include "header.php";?>
   </header>
  <body>
 
+ <!-- intro slide show -->
+
  <section class="hero">
+  <div class="hero-slideshow">
     <img 
       alt="Group of workers" 
       src="https://images.unsplash.com/photo-1698536946246-79ec6e017fe1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3RydWN0aW9uJTIwc2l0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D" 
-      style="width: 100%; height: 800px; object-fit: cover; display: block;"
-    />
-    <div class="hero-content">
-      <h1>MODERN FURNISHING SUPPLIES</h1>
-      <p>
-        Turn Your Vision Into Reality — Decorate Your Dreams with NobleHome’s Timeless Style and Trusted Strength.
-      </p>
-      <a class="learn-more" href="#">Learn More</a>
-    </div>
-  </section>
+      class="active"
+    >
+    <img 
+      alt="Workplace" 
+      src="../image/asdfg.png"
+      
+    >
+  </div>
+
+  <div class="hero-content">
+    <h1>MODERN FURNISHING SUPPLIES</h1>
+    <p>
+      Turn Your Vision Into Reality — Decorate Your Dreams with NobleHome’s Timeless Style and Trusted Strength.
+    </p>
+  </div>
+</section>
   
-  
+
+<!-- picture slideshow -->
+
 <section class="more-than-steel">
   <section class="construction-section">
     <div class="construction-images">
@@ -109,7 +118,9 @@ $conn->close();
         We design, fabricate, supply, and install high-quality modular cabinets, laminated boards,
         and home improvement solutions. Elevate your space with premium craftsmanship at market-competitive prices!
       </p>
-      <button class="construction-btn">About Us</button>
+      <a href="about_us.php" class="construction-btn-link">
+  <button class="construction-btn">View Products</button>
+</a>
     </div>
   </section>
 </section>
@@ -141,14 +152,18 @@ $conn->close();
 </div>
   </section>
 
+
+<!-- Available products -->
+
   <div class="product_avalable">
-    <h2>List Of Product</h2>
-    <p>
-      You can find everything that you need, all coming from a brand with a guarantee of good quality.
-    </p>
-  </div>
-
-
+  <h2>List Of Product</h2>
+  <p>
+    You can find everything that you need, all coming from a brand with a guarantee of good quality.
+  </p>
+  <a href="product_user.php" class="construction-btn-link">
+  <button class="construction-btn">View Products</button>
+</a>
+</div>
   <div class="carousel-container">
   <button class="carousel-btn prev">❮</button>
   <div class="carousel-track">
@@ -162,16 +177,17 @@ $conn->close();
   <button class="carousel-btn next">❯</button>
 </div>
 
-  
-<section id="contact">
+
 <!-- contact us -->
+
+<section id="contact">
 <div class="contact-us-container">
   <div class="contact-left">
   <h2>Contact Us</h2>
     <p>If you have any questions or inquiries, feel free to reach out to us. We are here to help!</p>
     
     <form action="index.php" method="post" class="contact-form">
-      <input type="hidden" name ="contact" value="contact">
+      <input type="hidden" name ="contact" value="Contact">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -203,18 +219,42 @@ $conn->close();
   
 </div>
 
-</section>
-
+    </section>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 
-  
- </body>
+  </body>
 <?php
 include '../user/footer.php';
 ?>
 
 
 </html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.hero-slideshow img');
+    const totalImages = images.length;
+  
+    function showNextImage() {
+      // Remove active class from current image
+      images[currentIndex].classList.remove('active');
+      
+      // Update index
+      currentIndex = (currentIndex + 1) % totalImages;
+      
+      // Add active class to next image
+      images[currentIndex].classList.add('active');
+    }
+  
+    // Start the slideshow
+    setInterval(showNextImage,  5000);
+  
+    // Display the first image initially
+    images[currentIndex].classList.add('active');
+  });
+
+</script>

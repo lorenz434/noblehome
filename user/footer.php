@@ -89,7 +89,7 @@
     <div class="footer-section">
       <h3>Contact Us</h3>
       <ul>
-        <li>Email: <a href="mailto:info@example.com">noblehome@gmail.com</a></li>
+        <li>Email: <a href="mailto:info@example.com">noblehomeconst.ph@gmail.com        </a></li>
         <li>Phone: +991 324</li>
         <li>Address: MC Premier
           1181 EDSA Balintawak, Quezon City, Philippines</li>

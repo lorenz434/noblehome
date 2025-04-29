@@ -26,22 +26,56 @@ include 'sidebar_admin.php';
             background-color: #e2e3e5; /* Light gray */
             font-weight: normal;
         }
+        .chat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.chat-preview {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.chat-actions {
+    margin-left: 10px;
+}
+
+.trash-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+}
+
+.trash-button:hover {
+    color: darkred;
+}
 </style>
 <body>
    
 <div class="chat-container">
-        <!-- Inquiry List -->
-        <div class="chat-list">
-        <?php while ($chat = mysqli_fetch_assoc($result)): ?>
-    <div class="chat-item <?php echo $chat['is_read'] ? 'read' : 'unread'; ?>" onclick="viewChat('<?php echo htmlspecialchars($chat['id']); ?>')">
-        <div class="chat-preview">
-            <strong><?php echo htmlspecialchars($chat['name']); ?></strong>
-            <span><?php echo htmlspecialchars($chat['message_preview']); ?>...</span>
+    <!-- Inquiry List -->
+    <div class="chat-list">
+    <?php while ($chat = mysqli_fetch_assoc($result)): ?>
+        <div class="chat-item <?php echo $chat['is_read'] ? 'read' : 'unread'; ?>">
+            <div class="chat-preview" onclick="viewChat('<?php echo htmlspecialchars($chat['id']); ?>')">
+                <strong><?php echo htmlspecialchars($chat['name']); ?></strong>
+                <span><?php echo htmlspecialchars($chat['message_preview']); ?>...</span>
+            </div>
+            
+            <!-- Trash Icon -->
+            <div class="chat-actions">
+                <button class="trash-button" onclick="deleteChat('<?php echo htmlspecialchars($chat['id']); ?>', event)">
+                    🗑️
+                </button>
+            </div>
         </div>
+    <?php endwhile; ?>
     </div>
-<?php endwhile; ?>
-
-        </div>
 
         <!-- Chat Details -->
         <div class="chat-details" id="chat-details">
@@ -68,7 +102,7 @@ include 'sidebar_admin.php';
     </div>
 
     <script>
- function viewChat(id) {
+    function viewChat(id) {
     fetch('get_inquiry_details.php?id=' + id)
         .then(response => response.json())
         .then(data => {
@@ -115,22 +149,22 @@ include 'sidebar_admin.php';
 
 
 
-    document.getElementById('replyForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
+                document.getElementById('replyForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
 
-    fetch('send_reply.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data); // Display success or error message
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
+                fetch('send_reply.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data); // Display success or error message
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
 
 
 
@@ -164,6 +198,15 @@ document.getElementById('replyForm').addEventListener('submit', function(e) {
         console.error('Error:', error);
     });
 });
+
+
+function deleteChat(chatId, event) {
+    event.stopPropagation(); // Prevent triggering viewChat when clicking trash
+
+    if (confirm('Are you sure you want to delete this chat?')) {
+        window.location.href = 'delete_chat.php?id=' + chatId;
+    }
+}
 
     </script>
 

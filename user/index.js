@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     // --- 1. Auto Slideshow for construction images ---
     const constructionImages = document.querySelectorAll('.construction-img');
@@ -67,3 +68,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateCarousel(); // Initial position
 });
+
+
