@@ -17,44 +17,6 @@ include 'sidebar_admin.php';
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/inquiry_admin.css">
 </head>
-<style>
-    .chat-item.unread {
-    background-color: #f9f9f9; /* Light yellow */
-    font-weight: bold;
-        }
-        .chat-item.read {
-            background-color: #e2e3e5; /* Light gray */
-            font-weight: normal;
-        }
-        .chat-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-.chat-preview {
-    flex-grow: 1;
-    cursor: pointer;
-}
-
-.chat-actions {
-    margin-left: 10px;
-}
-
-.trash-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: red;
-}
-
-.trash-button:hover {
-    color: darkred;
-}
-</style>
 <body>
    
 <div class="chat-container">

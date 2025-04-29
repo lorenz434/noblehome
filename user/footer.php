@@ -3,82 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/footer.css">
     <title>Document</title>
 </head>
 
 <style>
-    
-.footer {
-  background-color: #2c2c2c;
-  color: white;
-  padding: 40px 0;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.footer-section {
-  margin-bottom: 20px;
-  padding: 10px;
-}
-
-.footer-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #FB9526;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section ul li {
-  margin: 10px 0;
-}
-
-.footer-section ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-section ul li a:hover {
-  color: #FB9526;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.social-links img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s;
-}
-
-.social-links img:hover {
-  transform: scale(1.1);
-}
-
-.footer-bottom {
-  background-color: #1c1c1c;
-  padding: 10px;
-  font-size: 0.9rem;
-}
-
-.footer-bottom p {
-  margin: 0;
-  color: #bbb;
-}
-
 
 </style>
 <body>
@@ -98,18 +27,17 @@
     <div class="footer-section">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="../user/index.php">Home</a></li>
+        <li><a href="../user/product_user.php">Products</a></li>
+        <li><a href="../user/about_us.php">About Us</a></li>
       </ul>
     </div>
     <div class="footer-section">
       <h3>Follow Us</h3>
       <ul class="social-links">
         <li><a href="https://www.facebook.com/noblehomedepotph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/500px-2023_Facebook_icon.svg.png" alt="Facebook"></a></li>
-        <li><a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/016/716/450/small_2x/tiktok-icon-free-png.png" alt="Twitter"></a></li>
-        <li><a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram"></a></li>
+        <li><a href="https://www.instagram.com/noblehome_depot/"><img src="https://static.vecteezy.com/system/resources/thumbnails/016/716/450/small_2x/tiktok-icon-free-png.png" alt="Twitter"></a></li>
+        <li><a href="https://www.tiktok.com/@noblehome_depot?is_from_webapp=1&sender_device=pc"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram"></a></li>
       </ul>
     </div>
   </div>

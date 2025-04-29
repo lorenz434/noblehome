@@ -1,223 +1,193 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
   margin: 0;
-  background-color: #fdfdfd;
-  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  background-color: #e9ecef;
+  background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
   background-repeat: repeat;
   background-attachment: fixed;
   color: #333;
-  scroll-behavior: smooth;
 }
 
+/* ===== About Us Container ===== */
 .about-us {
-  max-width: 1600px;
-  margin: 3rem auto;
-  background: linear-gradient(145deg, #ffffff, #f1f1f1);
-  border-radius: 24px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  padding: 4rem 3rem;
-  transition: box-shadow 0.3s ease;
+  max-width: 1200px;
+  margin: 4rem auto;
+  background: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 }
 
-.about-us:hover {
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-}
-
-.about-header {
+/* ===== Headings ===== */
+.about-header,
+.section h2 {
   text-align: center;
-  font-size: 3.5rem;
-  margin-bottom: 3rem;
-  color: #ff9100;
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  text-shadow: 1px 1px #fff3e0;
+  font-size: 2.5rem;
+  line-height: double;
+  color: #222;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  position: relative;
 }
 
+.section h2::after {
+  content: '';
+  width: 350px;
+  height: 2px;
+  background-color: #FB9526;
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 1px;
+}
+
+/* ===== About Content ===== */
 .about-content {
   display: flex;
   flex-wrap: wrap;
+  gap: 2rem;
   align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
+  justify-content: center;
 }
 
 .about-content img {
+  max-width: 500px;
   width: 100%;
-  max-width: 550px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.about-content img:hover {
-  transform: scale(1.03);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .about-text {
   flex: 1;
-  font-size: 1.4rem;
-  color: #444;
-  line-height: 1.9;
+  font-size: 1.1rem;
+  color: #555;
   text-align: justify;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.8);
-  border-left: 4px solid #ff9100;
-  border-radius: 12px;
+  line-height: 35px;
 }
 
+/* ===== Section Layout ===== */
 .section {
-  margin-top: 6rem;
-  padding: 4rem 2rem;
-  background: linear-gradient(to right, #ffffff, #fafafa);
-  border-radius: 16px;
+  margin-top: 5rem;
+  padding: 2rem 1rem;
 }
 
-.section h2 {
-  font-size: 2.7rem;
-  color: #ff9100;
-  margin-bottom: 2.5rem;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-shadow: 1px 1px #fff3e0;
-}
-
+/* ===== Mission & Vision Section ===== */
 .mission-vision-container {
   display: flex;
-  justify-content: space-around;
+  gap: 2rem;
   flex-wrap: wrap;
-  gap: 3rem;
-  width: 95%;
-  margin: auto;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .mission, .vision {
   flex: 1;
-  min-width: 320px;
+  min-width: 300px;
   background: #ffffff;
   padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.mission:hover, .vision:hover {
-  transform: translateY(-8px);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  border-left: 4px solid #FB9526;
 }
 
 .mission h2, .vision h2 {
-  display: flex;
-  align-items: center;
-  font-size: 2.2rem;
-  color: #ff9100;
-  margin-bottom: 1.2rem;
-}
-
-.mission h2 i, .vision h2 i {
-  margin-right: 1rem;
-  color: #ff9100;
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .mission ul {
-  list-style: none;
-  padding: 0;
-  font-size: 1.2rem;
-  line-height: 2;
-  color: #444;
-}
-
-.mission ul li {
-  margin-bottom: 1.3rem;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.mission ul li::before {
-  content: "▹";
-  color: #ff9100;
-  position: absolute;
-  left: 0;
-  font-size: 1.4rem;
-  top: 2px;
+  padding-left: 1rem;
+  list-style-type: disc;
+  color: #555;
 }
 
 .vision p {
-  font-size: 1.3rem;
-  line-height: 1.9;
+  font-size: 1.05rem;
   color: #555;
-  text-align: justify;
 }
 
+/* ===== Values List ===== */
 .values-list {
   display: flex;
-  gap: 3rem;
-  justify-content: center;
+  gap: 1.5rem;
   flex-wrap: wrap;
-  margin-top: 3rem;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .value-item {
-  background: #fffdfa;
-  padding: 2rem;
-  border-radius: 20px;
-  width: 320px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 260px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .value-item:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.2);
-}
-
-.value-item i {
-  font-size: 2.7rem;
-  color: #ff9100;
-  margin-bottom: 1rem;
+  transform: translateY(-5px);
 }
 
 .value-item h3 {
-  font-size: 1.7rem;
-  margin-bottom: 1rem;
-  color: #333;
+  font-size: 1.3rem;
+  color: #222;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
 }
 
 .value-item p {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   color: #666;
 }
 
+/* ===== Footer ===== */
 footer {
-  background: linear-gradient(to right, #444, #222);
-  color: white;
-  padding: 2.5rem 0;
+  background-color: #1d1d1d;
+  color: #eee;
+  padding: 2rem 1rem;
   text-align: center;
+  font-size: 0.95rem;
   margin-top: 5rem;
-  border-top: 5px solid #ff9100;
 }
 
-footer p {
-  font-size: 1.2rem;
-  margin: 0;
-}
-
+/* ===== Responsive Layout ===== */
 @media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
+  .about-content, 
+  .mission-vision-container, 
   .values-list {
     flex-direction: column;
   }
 
-  .mission-vision-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .mission, .vision {
-    text-align: center;
+  .about-header,
+  .section h2 {
+    font-size: 2rem;
   }
 }
+
+.about-heading-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-header {
+  font-size: 3rem;
+  font-weight: 700;
+  color:rgb(0, 0, 0);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+
+}
+
+.about-header::after {
+  content: "";
+  width: 350px;
+  height: 4px;
+  background: #FB9526;
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+

@@ -168,3 +168,40 @@ body {
     color: #dc3545; /* Red for error */
 }
 
+
+.chat-item.unread {
+    background-color: #f9f9f9; /* Light yellow */
+    font-weight: bold;
+        }
+        .chat-item.read {
+            background-color: #e2e3e5; /* Light gray */
+            font-weight: normal;
+        }
+        .chat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.chat-preview {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.chat-actions {
+    margin-left: 10px;
+}
+
+.trash-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+}
+
+.trash-button:hover {
+    color: darkred;
+}
