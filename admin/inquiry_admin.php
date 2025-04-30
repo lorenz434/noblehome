@@ -106,8 +106,8 @@ include 'sidebar_admin.php';
         });
 
     // Optional: Send a separate request to mark as read in the DB
-    fetch(`mark_as_read.php?id=${id}`);
-}
+            fetch(`mark_as_read.php?id=${id}`);
+        }
 
 
 
@@ -131,44 +131,44 @@ include 'sidebar_admin.php';
 
 
 
-document.getElementById('replyForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    const loadingIndicator = document.getElementById('loading-indicator');
-    const replyStatus = document.getElementById('reply-status');
+        document.getElementById('replyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const replyStatus = document.getElementById('reply-status');
 
-    loadingIndicator.style.display = 'block';
-    replyStatus.textContent = '';
-    replyStatus.classList.remove('error');
+            loadingIndicator.style.display = 'block';
+            replyStatus.textContent = '';
+            replyStatus.classList.remove('error');
 
-    fetch('send_reply.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        loadingIndicator.style.display = 'none';
-        replyStatus.textContent = data;
-        if (data.toLowerCase().includes('failed')) {
-            replyStatus.classList.add('error');
+            fetch('send_reply.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                loadingIndicator.style.display = 'none';
+                replyStatus.textContent = data;
+                if (data.toLowerCase().includes('failed')) {
+                    replyStatus.classList.add('error');
+                }
+            })
+            .catch(error => {
+                loadingIndicator.style.display = 'none';
+                replyStatus.textContent = 'An error occurred while sending the reply.';
+                replyStatus.classList.add('error');
+                console.error('Error:', error);
+            });
+        });
+
+
+        function deleteChat(chatId, event) {
+            event.stopPropagation(); // Prevent triggering viewChat when clicking trash
+
+            if (confirm('Are you sure you want to delete this chat?')) {
+                window.location.href = 'delete_chat.php?id=' + chatId;
+            }
         }
-    })
-    .catch(error => {
-        loadingIndicator.style.display = 'none';
-        replyStatus.textContent = 'An error occurred while sending the reply.';
-        replyStatus.classList.add('error');
-        console.error('Error:', error);
-    });
-});
-
-
-function deleteChat(chatId, event) {
-    event.stopPropagation(); // Prevent triggering viewChat when clicking trash
-
-    if (confirm('Are you sure you want to delete this chat?')) {
-        window.location.href = 'delete_chat.php?id=' + chatId;
-    }
-}
 
     </script>
 

@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (!isset($_COOKIE['guest_id'])) {
+    $guest_id = 'guest_' . uniqid();
+    setcookie('guest_id', $guest_id, time() + (86400 * 30), "/"); // 30 days
+} else {
+    $guest_id = $_COOKIE['guest_id'];
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +32,7 @@
 
           <div class="nav-links">
             <a href="../user/product_user.php">Products</a>
+            <a href="../user/cart.php">Cart</a>
             <a href="../user/location.php">Locations</a>
             <a href="../user/about_us.php">About Us</a>
             <a href="../user/faqs.php">FAQs</a>

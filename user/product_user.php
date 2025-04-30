@@ -13,8 +13,8 @@
     <?php include "header.php";?>
   </header>
   
-
-  <body>
+  
+  <body>  
   <div class="main-container">
     <div class="filter-sidebar">
       <h2>Filter Products</h2>

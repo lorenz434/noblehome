@@ -42,6 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Close the statement
   mysqli_stmt_close($stmt);
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -85,8 +87,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <p><strong>Description:</strong> <?= htmlspecialchars($product['description']) ?></p>
 
         <div class="button-group">
-          <button class="inquire-btn" id="openModal">Inquire Now</button>
+          <button class="inquire-btn" id="openModal">Inquire Now</button> 
+
+          <form action="add_to_cart.php" method="POST">
+          <input type="hidden" name="product_id" value="<?= $product_id ?>">
+          <button type="submit" class="inquire-btn">Add to Cart</button>
+        </form>
         </div>
+
+        
         <a href="product_user.php" class="back-btn">← Back to Products</a>
 
       </div>
